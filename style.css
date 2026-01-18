@@ -1,0 +1,408 @@
+@layer color {
+    :root {
+        --Lime: hsl(61, 70%, 52%);
+        --Red: hsl(4, 69%, 50%);
+
+        --White: hsl(0, 0%, 100%);
+        --Slate-100: hsl(202, 86%, 94%);
+        --Slate-300: hsl(203, 41%, 72%);
+        --Slate-500: hsl(200, 26%, 54%);
+        --Slate-700: hsl(200, 24%, 40%);
+        --Slate-900: hsl(202, 55%, 16%);
+    }
+}
+
+@layer fonts {
+    @font-face {
+        font-family: jarkata-medium;
+        src: url(assets/fonts/static/PlusJakartaSans-Medium.ttf);
+    }
+
+    @font-face {
+        font-family: jarkata-bold;
+        src: url(assets/fonts/static/PlusJakartaSans-Bold.ttf);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 1rem;
+    font-family: jarkata-medium;
+    /* color: var(--Slate-300); */
+}
+
+h1 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    font-family: jarkata-bold;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-family: jarkata-bold;
+}
+
+h3 {
+    color: var(--Slate-500);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    font-family: jarkata-bold;
+}
+
+
+input{
+    outline: none;
+}
+
+input[type = 'text'] {
+    padding: 0.9rem;
+    border: none;
+    font-family: jarkat-bold;
+    font-weight: 900;
+    font-size: 1.5rem;
+    outline: none;
+    cursor: pointer;
+
+}
+
+div .input__error {
+    border:  1px solid var(--Red);
+}
+
+div .input__wrapper .error__label{
+background: var(--Red);
+color: var(--White);
+transition: background 1s;
+}
+
+.cta__required {
+    color: var(--Red);
+    font-family: jarkata-medium;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: none;
+}
+
+#hidden {
+    display: none;
+}
+
+.calculator {
+    text-align: left;
+    padding: 2rem 0;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+
+
+.reset {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    color: var(--Slate-700);
+    font-weight: 600;
+    border-bottom: 1px solid var(--Slate-700);
+    width: fit-content;
+    cursor: pointer;
+}
+
+.reset:hover {
+    color: var(--Slate-900);
+}
+
+.input__wrapper {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    border: solid 1px var(--Slate-500);
+    border-radius: 3px;
+    padding: 0;
+    cursor: pointer;
+    margin: 0.8rem 0;
+
+    /* width: 100%; */
+
+
+}
+
+.input__wrapper label {
+    background: var(--Slate-100);
+    font-family: jarkata-medium;
+    color: var(--Slate-900);
+    padding: 1rem;
+     cursor: pointer;
+}
+
+.input__wrapper input{
+    width: 100%;
+    cursor: pointer;
+}
+
+.input__wrapper:hover{
+    border:1px solid var(--Slate-900);
+}
+
+.input__wrapper:focus {
+    border-color: var(--Lime);
+    background: var(--Lime);
+    /* transition: all 100ms ease-in-out; */
+
+  
+}
+
+.input__wrapper:focus label {
+    background: var(--Lime);
+    /* transition: all 100ms ease-in-out; */
+}
+
+.error__message{
+font-size: .8rem;
+color: var(--Red);
+transition: display 1s;
+
+}
+
+.mortgage__type {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border: solid 1px var(--Slate-500);
+    border-radius: 5px;
+    margin-bottom: 0.8rem;
+    padding: 1rem;
+
+}
+
+
+.mortgage__type p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--Slate-900);
+    font-weight: 700;
+}
+
+.mortgage__type:hover{
+    border-color: var(--Lime);
+}
+
+.calculate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    border: none;
+    background: var(--Lime);
+    padding: 1rem;
+    border-radius: 30px;
+    color: var(--Slate-900);
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 2rem;
+   
+}
+
+.calculate  p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.calculate:hover {
+    background: hsla(61, 70%, 52%, 0.61);
+}
+
+
+/* RESULTS STARTS HERE */
+
+.results {
+    background: var(--Slate-900);
+    color: var(--White);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.complete__results {
+    text-align: left;
+
+   
+}
+
+.complete__results hr {
+    border: 1px solid var(--Slate-100);
+    border-color: var(--Slate-100);
+}
+
+.complete__results h2 {
+    font-size: 1.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.complete__results p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--Slate-300);
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: hsl(201, 57%, 12%);
+    border-top: 3px solid var(--Lime);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 2rem;
+
+}
+
+
+.result h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 3rem;
+    color: var(--Lime);
+}
+
+.result h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.4rem;
+}
+
+.result  h4 {
+    color: var(--Slate-300);
+    font-weight: 100;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.empty__results {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    height: 100%;
+
+   
+}
+
+.empty__results h2 {
+    margin-bottom: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.empty__results p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--Slate-300);
+}
+
+
+@media screen and (min-width: 720px) {
+    body {
+        background: var(--Slate-100);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper{
+        width: 90%;
+        height: fit-content;
+        margin: auto;
+    }
+
+    .mortgage__container {
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+        background: var(--White);
+    }
+
+    .results {
+        border-bottom-left-radius: 90px;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .term__rate__container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        /* justify-content: space-between; */
+    }
+
+    .heading {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    body {
+        background: var(--Slate-100);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper{
+        width: 60%;
+        height: fit-content;
+        margin: auto;
+    }
+
+    .mortgage__container {
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+        background: var(--White);
+    }
+
+    .results {
+        border-bottom-left-radius: 90px;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .term__rate__container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        /* justify-content: space-between; */
+    }
+
+    .heading {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
