@@ -104,6 +104,7 @@ allInputs.forEach(input => {
 form.addEventListener('submit', function(e){
     e.preventDefault()
    
+   completeResult.scrollIntoView({behavior: 'smooth'})
   
 
     if(!Number.isFinite(+mortgageAmountInput.value) || !Number.isFinite(+mortgageYearInput.value) || !Number.isFinite(+interestRateInput.value)) return
